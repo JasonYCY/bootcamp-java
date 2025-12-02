@@ -25,9 +25,9 @@ public class DemoMath {
 
     System.out.println("averageScore: " + averageScore);
 
-    // 0.1 + 0.2 = 0.30000000000000004 (Never use double variable for Math Operations -> use BigDecimal)
+    // 0.1 + 0.2 = 0.30000000000000004 (Never use double variable for Math
+    // Operations -> use BigDecimal)
     System.out.println("0.1 + 0.2 = " + (0.1 + 0.2));
-
 
     // Overflow
     byte overflowByte = 127;
@@ -40,13 +40,16 @@ public class DemoMath {
 
     // cast char into int | cast int into char
     int a = 'a';
-    System.out.println("cast char 'a' into int: " + a + "\n");
-
-    System.out.println(
-        "cast int (65620 - 65535) into char: " + (char) (65620 - 65535));
-    System.out.println("cast int 65620 into char: " + (char) 65620);
+    System.out.println("cast char 'a' into int: " + a);
 
     int zeroAsciiCode = '0';
-    System.out.println("cast char '0' into int: " + zeroAsciiCode);
+    System.out.println("cast char '0' into int: " + zeroAsciiCode + "\n");
+
+    System.out.println("cast int (65620) into char: " + (char) 65620);
+    System.out.println(
+        "cast int (65620 - 65535) into char: " + (char) (65620 - 65535));
+    System.out.println(
+        "cast int (65620 % 65536) into char: " + (char) (65620 % 65536));
+
   }
 }
