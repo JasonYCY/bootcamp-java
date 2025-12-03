@@ -152,5 +152,53 @@ public class DemoIf {
 
     System.out.println("Grade: " + grade);
     printSeparationLine();
+
+    // String method
+    String name = "John";
+    System.out.println("name: " + name + "\n");
+
+    System.out.println("[using equals()]");
+    if ("John".equals(name)) { // "John".equals(name) better than name.equals("John")
+      System.out.println("He is John\n");
+    } else {
+      System.out.println("He is not John\n");
+    }
+
+    System.out.println("[using charAt()]");
+    int maxChar = "John".length();
+    boolean isJohn = true;
+
+    for (int i = 0; i < maxChar; i++) {
+      if ("John".charAt(i) != name.charAt(i)) {
+        isJohn = false;
+        break;
+      }
+    }
+    System.out.println("isJohn: " + isJohn);
+    printSeparationLine();
+
+    // switch-case
+    money = 0;
+    grade = 'B';
+    System.out.println("grade: " + grade);
+    System.out.println("original money: " + money);
+
+    switch (grade) {
+      case 'A':
+        money += 100;
+        break;
+
+      case 'B':
+        money += 50;
+        break;
+
+      case 'C':
+        money += 20;
+        break;
+
+      default:
+        break;
+    }
+    System.out.println("new money: " + money);
   }
 }
