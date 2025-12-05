@@ -38,6 +38,11 @@ public class DemoArray3 {
     // }
     // System.out.println("Amounts: " + Arrays.toString(amounts));
 
+    // toCharArray()
+    // String staff = "John";
+    // char[] charArr = staff.toCharArray();
+    // System.out.println(Arrays.toString(charArr));
+
     /**
      * Exercise - checking username and password
      * 
@@ -88,31 +93,26 @@ public class DemoArray3 {
      * 
      * 3) genders == female -> +5% fee
      */
-    // final int baseFee = 100;
-    // int[] ages = new int[] {16, 66, 18, 37};
-    // char[] genders = new char[] {'M', 'F', 'M', 'F'};
-    // boolean[] smokers = new boolean[] {false, true, true, false};
-    // double[] finalFee = new double[ages.length];
+    final int baseFee = 100;
+    int[] ages = new int[] {16, 66, 18, 37};
+    char[] genders = new char[] {'M', 'F', 'M', 'F'};
+    boolean[] smokers = new boolean[] {false, true, true, false};
+    double[] finalFee = new double[ages.length];
 
-    // for (int i = 0; i < finalFee.length; i++) {
-    // double currentPercentage = 0;
-    // if (smokers[i] == true) {
-    // currentPercentage += 20;
-    // }
-    // if (ages[i] > 60) {
-    // currentPercentage += 30;
-    // }
-    // if (genders[i] == 'F') {
-    // currentPercentage += 5;
-    // }
-    // finalFee[i] = baseFee * (1 + currentPercentage / 100);
-    // }
-    // System.out.println("Final fee: " + Arrays.toString(finalFee));
-
-    // toCharArray()
-    // String staff = "John";
-    // char[] charArr = staff.toCharArray();
-    // System.out.println(Arrays.toString(charArr));
+    for (int i = 0; i < finalFee.length; i++) {
+      double currentPercentage = 0;
+      if (smokers[i] == true) {
+        currentPercentage += 20;
+      }
+      if (ages[i] > 60) {
+        currentPercentage += 30;
+      }
+      if (genders[i] == 'F') {
+        currentPercentage += 5;
+      }
+      finalFee[i] = baseFee * (1 + currentPercentage / 100);
+    }
+    System.out.println("Final fee: " + Arrays.toString(finalFee));
 
 
 
