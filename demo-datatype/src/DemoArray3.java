@@ -20,12 +20,25 @@ public class DemoArray3 {
     // }
 
     // find the median, 34, 78, 12, 89, 45, 99, 23 -> answer = 45
-    // int[] findMedianArr = new int[] {34, 78, 12, 89, 45, 99, 23};
-    // int medianIndex = findMedianArr.length / 2;
-    // System.out.println("The original array: " + Arrays.toString(findMedianArr));
-    // Arrays.sort(findMedianArr);
-    // System.out.println("The sorted array: " + Arrays.toString(findMedianArr));
-    // System.out.println("The median is: " + findMedianArr[medianIndex]);
+    int[] findMedianArr = new int[] {34, 78, 12, 89, 45, 99, 23};
+    int medianIndex = findMedianArr.length / 2;
+    System.out.println("medianIndex: " + medianIndex);
+    System.out.println(
+        "The original array: " + Arrays.toString(findMedianArr) + "\n");
+
+    for (int i = 0; i < findMedianArr.length - medianIndex; i++) {
+      for (int j = 0; j < findMedianArr.length - 1 - i; j++) {
+        if (findMedianArr[j] > findMedianArr[j + 1]) {
+          int temp = findMedianArr[j + 1];
+          findMedianArr[j + 1] = findMedianArr[j];
+          findMedianArr[j] = temp;
+        }
+      }
+      System.out.println("\t Bubbled once: " + Arrays.toString(findMedianArr));
+    }
+
+    System.out.println("\nThe sorted array: " + Arrays.toString(findMedianArr));
+    System.out.println("The median is: " + findMedianArr[medianIndex]);
 
     // prices 99.9, 13.8, 9.9, 1200.0
     // quantities 3, 10, 12, 20
@@ -93,26 +106,26 @@ public class DemoArray3 {
      * 
      * 3) genders == female -> +5% fee
      */
-    final int baseFee = 100;
-    int[] ages = new int[] {16, 66, 18, 37};
-    char[] genders = new char[] {'M', 'F', 'M', 'F'};
-    boolean[] smokers = new boolean[] {false, true, true, false};
-    double[] finalFee = new double[ages.length];
+    // final int baseFee = 100;
+    // int[] ages = new int[] {16, 66, 18, 37};
+    // char[] genders = new char[] {'M', 'F', 'M', 'F'};
+    // boolean[] smokers = new boolean[] {false, true, true, false};
+    // double[] finalFee = new double[ages.length];
 
-    for (int i = 0; i < finalFee.length; i++) {
-      double currentPercentage = 0;
-      if (smokers[i] == true) {
-        currentPercentage += 20;
-      }
-      if (ages[i] > 60) {
-        currentPercentage += 30;
-      }
-      if (genders[i] == 'F') {
-        currentPercentage += 5;
-      }
-      finalFee[i] = baseFee * (1 + currentPercentage / 100);
-    }
-    System.out.println("Final fee: " + Arrays.toString(finalFee));
+    // for (int i = 0; i < finalFee.length; i++) {
+    // double currentPercentage = 0;
+    // if (smokers[i] == true) {
+    // currentPercentage += 20;
+    // }
+    // if (ages[i] > 60) {
+    // currentPercentage += 30;
+    // }
+    // if (genders[i] == 'F') {
+    // currentPercentage += 5;
+    // }
+    // finalFee[i] = baseFee * (1 + currentPercentage / 100);
+    // }
+    // System.out.println("Final fee: " + Arrays.toString(finalFee));
 
 
 
