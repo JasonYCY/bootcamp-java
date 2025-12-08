@@ -30,6 +30,6 @@ public class DemoBigDecimal {
         .setScale(3, RoundingMode.HALF_UP)); // 0.038
 
     System.out.println(BigDecimal.valueOf(0.5).multiply(BigDecimal.valueOf(0.5))
-        .setScale(1, RoundingMode.HALF_DOWN)); // 0.2 (0.25 -> 0.2)
+        .setScale(1, RoundingMode.HALF_DOWN)); // 0.2 (0.5 * 0.5 = 0.25 -> 0.2)
   }
 }
