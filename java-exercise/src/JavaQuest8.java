@@ -5,18 +5,15 @@ public class JavaQuest8 {
    * Second Max = 230
    */
   public static int findSecondMax(int[] arr) {
-    int max = arr[0];
-    for (int i = 1; i < arr.length; i++) {
-      if (arr[i] > max) {
-        max = arr[i];
-        arr[i] = Integer.MIN_VALUE;
-      }
-    }
-    
+    int max = Integer.MIN_VALUE;
     int secondMax = Integer.MIN_VALUE;
-    for (int i = 1; i < arr.length; i++) {
-      if (arr[i] > secondMax) {
-        secondMax = arr[i];
+
+    for (int currentNumber : arr) {
+      if (currentNumber > max) {
+        secondMax = max;
+        max = currentNumber;
+      } else if (currentNumber > secondMax) {
+        secondMax = currentNumber;
       }
     }
 
@@ -31,6 +28,7 @@ public class JavaQuest8 {
 
     // Your program should be able to handle all the above test case.
     int secondMax;
+    
     // code here ...
     secondMax = findSecondMax(testCase1);
     System.out.println("(Test Case 1) Second Max = " + secondMax);
@@ -43,5 +41,8 @@ public class JavaQuest8 {
 
     secondMax = findSecondMax(testCase4);
     System.out.println("(Test Case 4) Second Max = " + secondMax);
+
+
+
   }
 }
