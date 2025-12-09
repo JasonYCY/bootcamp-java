@@ -20,25 +20,25 @@ public class DemoArray3 {
     // }
 
     // find the median, 34, 78, 12, 89, 45, 99, 23 -> answer = 45
-    int[] findMedianArr = new int[] {34, 78, 12, 89, 45, 99, 23};
-    int medianIndex = findMedianArr.length / 2;
-    System.out.println("medianIndex: " + medianIndex);
-    System.out.println(
-        "The original array: " + Arrays.toString(findMedianArr) + "\n");
+    // int[] findMedianArr = new int[] {34, 78, 12, 89, 45, 99, 23};
+    // int medianIndex = findMedianArr.length / 2;
+    // System.out.println("medianIndex: " + medianIndex);
+    // System.out.println(
+    // "The original array: " + Arrays.toString(findMedianArr) + "\n");
 
-    for (int i = 0; i < findMedianArr.length - medianIndex; i++) {
-      for (int j = 0; j < findMedianArr.length - 1 - i; j++) {
-        if (findMedianArr[j] > findMedianArr[j + 1]) {
-          int temp = findMedianArr[j + 1];
-          findMedianArr[j + 1] = findMedianArr[j];
-          findMedianArr[j] = temp;
-        }
-      }
-      System.out.println("\t Bubbled once: " + Arrays.toString(findMedianArr));
-    }
+    // for (int i = 0; i < findMedianArr.length - medianIndex; i++) {
+    // for (int j = 0; j < findMedianArr.length - 1 - i; j++) {
+    // if (findMedianArr[j] > findMedianArr[j + 1]) {
+    // int temp = findMedianArr[j + 1];
+    // findMedianArr[j + 1] = findMedianArr[j];
+    // findMedianArr[j] = temp;
+    // }
+    // }
+    // System.out.println("\t Bubbled once: " + Arrays.toString(findMedianArr));
+    // }
 
-    System.out.println("\nThe sorted array: " + Arrays.toString(findMedianArr));
-    System.out.println("The median is: " + findMedianArr[medianIndex]);
+    // System.out.println("\nThe sorted array: " + Arrays.toString(findMedianArr));
+    // System.out.println("The median is: " + findMedianArr[medianIndex]);
 
     // prices 99.9, 13.8, 9.9, 1200.0
     // quantities 3, 10, 12, 20
@@ -126,6 +126,23 @@ public class DemoArray3 {
     // finalFee[i] = baseFee * (1 + currentPercentage / 100);
     // }
     // System.out.println("Final fee: " + Arrays.toString(finalFee));
+
+    // lowercase letter
+    char[] characters = new char[] {'a', 'z', 'b', 'a', 'c', 'b', 'a', 'e', 'x', 'e', 'e', 'x', 'e', 'y'};
+    int[] letterFrequency = new int[26];
+
+    for (int i = 0; i < characters.length; i++) {
+      letterFrequency[characters[i] - 'a'] += 1;
+    }
+
+    int maxIndex = 0;
+    for (int i = 0; i < letterFrequency.length; i++) {
+      if (letterFrequency[i] > letterFrequency[maxIndex]) {
+        maxIndex = i;
+      }
+    }
+    System.out.println("The most frequent letter is " + (char) ('a' + maxIndex));
+    System.out.println(Arrays.toString(letterFrequency));
 
 
 
