@@ -3,10 +3,10 @@ import java.math.BigDecimal;
 public class Item {
   // attribute
   private double price;
-  private double quantity;
+  private int quantity;
 
   // constructor
-  public Item(double price, double quantity) {
+  public Item(double price, int quantity) {
     this.price = price;
     this.quantity = quantity;
   }
@@ -18,6 +18,6 @@ public class Item {
 
   @Override
   public String toString() {
-    return String.format("(price: %.2f, quantity: %.2f)", price, quantity);
+    return String.format("(price: %.2f, quantity: %d)", price, quantity);
   }
 }
