@@ -9,7 +9,7 @@ public class Student {
     candies = new Candy[0];
   }
 
-  public void receiveCandy(Candy candy) {
+  public void receive(Candy candy) {
     System.out.println("Student " + name + " is receiving a candy!");
     Candy[] newCandies = new Candy[candies.length + 1];
     for (int i = 0; i < candies.length; i++) {

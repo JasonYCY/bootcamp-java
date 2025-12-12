@@ -19,6 +19,18 @@ public class Teacher {
     candies = newCandies;
   }
 
+  public void buy(Candy[] candies) {
+    System.out.println("Teacher " + name + " is buying " + candies.length + " candies");
+    Candy[] newCandies = new Candy[this.candies.length + candies.length];
+    for (int i = 0; i < this.candies.length; i++) {
+      newCandies[i] = this.candies[i];
+    }
+    for (int i = 0; i < candies.length; i++) {
+        newCandies[this.candies.length + i] = candies[i];
+    }
+    this.candies = newCandies;
+  }
+
   public boolean distributeCandyTo(Student student) {
     if (candies.length <= 0) {
       System.out.println("Teacher " + name + " has no candy left! Can't distribute more candies!");
@@ -29,7 +41,7 @@ public class Teacher {
     for (int i = 0; i < newCandies.length; i++) {
       newCandies[i] = candies[i];
     }
-    student.receiveCandy(candies[candies.length - 1]);
+    student.receive(candies[candies.length - 1]);
     candies = newCandies;
     return true;
   }
@@ -67,16 +79,20 @@ public class Teacher {
     }
 
     // Teacher buy 22 candies
+    System.out.println("\n" + "=".repeat(100) + "\n");
     String[] colors = {"RED", "YELLOW", "BLUE"};
     for (int i = 0; i < 22; i++) {
       System.out.print(((i + 1 < 10) ? " " : "") + (i + 1) + ") ");
       String color = colors[i % colors.length];  // Cycles: RED, YELLOW, BLUE, RED...
       john.buy(Candy.ofColor(color));
     }
+    // Candy[] candyPackage =  new Candy[] {Candy.ofColor("RED"), Candy.ofColor("RED")};
+    // john.buy(candyPackage);
     System.out.println();
     john.showCandies();
     john.remainingCandies();
     System.out.println();
+    System.out.println("=".repeat(100) + "\n");
 
     // Teacher distributing candies to all students until he ran out of candies
     int studentID = 0;
@@ -90,7 +106,7 @@ public class Teacher {
       teacherHasCandies = john.distributeCandyTo(students[studentID]);
       System.out.println();
     }
-    System.out.println();
+    System.out.println("=".repeat(100) + "\n");
     john.remainingCandies();
     john.showCandies();
     System.out.println();
@@ -101,6 +117,7 @@ public class Teacher {
       student.showCandies();
       System.out.println();
     }
+    System.out.println("=".repeat(100) + "\n");
 
 
 
