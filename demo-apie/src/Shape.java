@@ -12,4 +12,9 @@ public abstract class Shape {
   // abstract method (without implementation)
   // child class MUST implement all abstract methods
   abstract double area();
+
+  @Override
+  public String toString() {
+    return "Shape(color=" + this.color + ")";
+  }
 }
