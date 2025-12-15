@@ -13,6 +13,7 @@ public class Librarian {
   }
 
   public Book findBook(int targetBookId) {
+    if (workingLibrary == null) return null;
     Book[] books = workingLibrary.getBooks();
     for (Book book : books) {
       if (book.getId() == targetBookId) return book;
