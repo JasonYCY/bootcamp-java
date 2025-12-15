@@ -1,10 +1,13 @@
 public class DemoObject {
   public static void main(String[] args) {
     // toString(), equals(), hashCode()
-    Dog d1 = new Dog();
+    Dog d1 = new Dog("John", 1);
+    Dog d2 = new Dog("John", 1);
 
     System.out.println(d1.toString());
     System.out.println(d1.hashCode());
-    System.out.println(d1.equals(new Dog()));
+
+    System.out.println(d1.equals(d2));
+    System.out.println(d1.hashCode() == d2.hashCode());
   }
 }
