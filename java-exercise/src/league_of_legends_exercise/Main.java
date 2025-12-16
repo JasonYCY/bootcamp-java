@@ -63,7 +63,7 @@ public class Main {
           System.out.println(
               RED + "Invalid input. Please enter a number between 1 and 5."
                   + RESET);
-          // Reprompt happens automatically because turnCompleted is false
+          // Prompt happens automatically because turnCompleted is false
         }
       }
 
