@@ -1,3 +1,5 @@
+package class_exercise;
+
 import java.math.BigDecimal;
 
 public class JavaQuest2 {

@@ -1,3 +1,5 @@
+package class_exercise;
+
 import java.util.Scanner;
 
 public class JavaQuest9 {

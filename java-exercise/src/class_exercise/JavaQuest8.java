@@ -1,3 +1,5 @@
+package class_exercise;
+
 public class JavaQuest8 {
   /**
    * Write a loop to find the second max number.

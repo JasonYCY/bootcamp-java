@@ -1,3 +1,5 @@
+package class_exercise;
+
 public class JavaQuest6 {
   /**
    * Expected output:

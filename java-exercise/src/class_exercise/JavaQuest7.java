@@ -1,3 +1,5 @@
+package class_exercise;
+
 /**
  * The sum is 55
  */

@@ -1,3 +1,5 @@
+package class_exercise;
+
 /**
  * Expected Output:
  * J
