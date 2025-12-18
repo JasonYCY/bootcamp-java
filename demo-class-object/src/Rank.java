@@ -13,6 +13,46 @@ public enum Rank {
   QUEEN('Q', 12, "Queen"),
   KING('K', 13, "King");
 
+  private static final int[] pokerValue = new int[] {
+    14,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+  };
+
+  private static final int[] bigTwoValue = new int[] {
+    14,
+    15,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+  };
+
+  public int getPokerValue() {
+    return pokerValue[this.ordinal()];
+  }
+
+  public int getBigTwoValue() {
+    return bigTwoValue[this.ordinal()];
+  }
+
   private final char symbol;
   private final int value;
   private final String fullName;
