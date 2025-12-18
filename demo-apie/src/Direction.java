@@ -1,13 +1,15 @@
 public enum Direction {
-  NORTH('N'),
-  EAST('E'),
-  SOUTH('S'),
-  WEST('W');
+  NORTH('N', 1),
+  EAST('E', 2),
+  SOUTH('S', -1),
+  WEST('W', -2);
 
   private char value;
+  private int number;
 
-  private Direction(char value) {
+  private Direction(char value, int number) {
     this.value = value;
+    this.number = number;
   }
 
   public char getValue() {
@@ -19,6 +21,15 @@ public enum Direction {
            (this == SOUTH && other == NORTH) ||
            (this == EAST && other == WEST) ||
            (this == WEST && other == EAST);
+  }
+
+  public Direction getOpposite() {
+    for (Direction dir : Direction.values()) {
+      if (this.number * -1 == dir.number) {
+        return dir;
+      }
+    }
+    return null;
   }
   
 
@@ -33,5 +44,8 @@ public enum Direction {
     Direction dir3 = Direction.EAST;
     System.out.println("Direction 3: " + dir3 + " (" + dir3.getValue() + ")");
     System.out.println("Are Direction 1 and Direction 3 opposite? " + dir1.isOpposite(dir3));
+
+    System.out.println("Opposite of Direction 1: " + dir1.getOpposite());
+    System.out.println("Opposite of Direction 3: " + dir3.getOpposite());
   }
 }
