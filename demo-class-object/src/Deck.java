@@ -1,28 +1,4 @@
 public class Deck {
-  // static
-  public static final Suit[] SUITS = new Suit[] {
-    Suit.DIAMONDS,
-    Suit.CLUBS,
-    Suit.HEARTS,
-    Suit.SPADES
-  };
-
-  public static final Rank[] RANKS = new Rank[] {
-    Rank.ACE,
-    Rank.TWO,
-    Rank.THREE,
-    Rank.FOUR,
-    Rank.FIVE,
-    Rank.SIX,
-    Rank.SEVEN,
-    Rank.EIGHT,
-    Rank.NINE,
-    Rank.TEN,
-    Rank.JACK,
-    Rank.QUEEN,
-    Rank.KING
-  };
-
   // attribute
   private Card[] cards;
 
@@ -30,8 +6,8 @@ public class Deck {
   public Deck() {
     cards = new Card[52];
     int cardIndex = 0;
-    for (Suit suit : SUITS) {
-      for (Rank rank : RANKS) {
+    for (Suit suit : Suit.values()) {
+      for (Rank rank : Rank.values()) {
         cards[cardIndex] = new Card(suit, rank);
         cardIndex++;
       }
