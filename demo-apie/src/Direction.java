@@ -28,7 +28,7 @@ public enum Direction {
     Direction dir2 = Direction.SOUTH;
     System.out.println("Direction 1: " + dir1 + " (" + dir1.getValue() + ")");
     System.out.println("Direction 2: " + dir2 + " (" + dir2.getValue() + ")");
-    System.out.println("Are Direcction 1 and Direction 2 opposite? " + dir1.isOpposite(dir2));
+    System.out.println("Are Direction 1 and Direction 2 opposite? " + dir1.isOpposite(dir2));
 
     Direction dir3 = Direction.EAST;
     System.out.println("Direction 3: " + dir3 + " (" + dir3.getValue() + ")");
