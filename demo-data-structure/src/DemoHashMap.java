@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 public class DemoHashMap {
   public static void main(String[] args) {
@@ -13,6 +14,11 @@ public class DemoHashMap {
       studentMap.put(student.getName(), student);
     }
     System.out.println(studentMap.get("Sally"));
+
+    System.out.println("\nPrint entries in student map: ");
+    for (Map.Entry<String, Student> entry : studentMap.entrySet()) {
+      System.out.println(entry.getKey() + " -> " + entry.getValue());
+    }
 
 
 
