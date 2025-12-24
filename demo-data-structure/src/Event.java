@@ -43,8 +43,8 @@ public class Event {
     PriorityQueue<Event> eventQueue = new PriorityQueue<>(
       (Event e1, Event e2) -> {
         int priorityDiff = e1.importance.ordinal() - e2.importance.ordinal();
-        int dateTimeDiff = e1.getEventDateTime().compareTo(e2.getEventDateTime());
-        return priorityDiff == 0 ? dateTimeDiff : priorityDiff;
+        if (priorityDiff != 0) return priorityDiff;
+        return e1.getEventDateTime().compareTo(e2.getEventDateTime());
       }
     );
 
