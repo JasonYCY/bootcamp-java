@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class Box<T> {
   private T value;
 
@@ -15,6 +17,17 @@ public class Box<T> {
 
   public void setValue(T value) {
     this.value = value;
+  }
+
+  // the T here is different from the T in Box<T>
+  // as static method belongs to class, so it can't access the T in object
+  // if the method is non-static, then the T will shadow the T in object
+  public static <T extends Shape> double totalArea2(List<T> shapes) {
+    double total = 0;
+    for (Shape shape : shapes) {
+      total += shape.area();
+    }
+    return total;
   }
 
 
