@@ -1,7 +1,7 @@
 public class BusinessRuntimeException extends RuntimeException {
   private int code;
 
-  private BusinessRuntimeException(SysCode sysCode) {
+  public BusinessRuntimeException(SysCode sysCode) {
     super(sysCode.getMessage());
     this.code = sysCode.getCode();
   }

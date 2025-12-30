@@ -1,7 +1,7 @@
 public class BusinessException extends Exception {
   private int code;
 
-  private BusinessException(SysCode sysCode) {
+  public BusinessException(SysCode sysCode) {
     super(sysCode.getMessage());
     this.code = sysCode.getCode();
   }
