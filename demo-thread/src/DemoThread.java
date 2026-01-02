@@ -5,7 +5,7 @@ public class DemoThread {
     return x;
   }
 
-  public void addOne() {
+  public synchronized void addOne() {
     x++;
   }
 
