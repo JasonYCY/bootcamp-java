@@ -1,7 +1,9 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class DemoStream2 {
   public static class Employee {
@@ -68,11 +70,11 @@ public class DemoStream2 {
     System.out.println(joinDates);
 
     // Find all employee names, who joined the company before 2020-JAN-01
-    List<String> names = employeeList.stream()
+    List<String> employeeNames = employeeList.stream()
       .filter(employee -> employee.getJoinDate().isBefore(LocalDate.of(2020, 1, 1)))
       .map(Employee::getName)
       .toList();
-    System.out.println(names);
+    System.out.println(employeeNames);
 
     // Find all employee with salary > 25000.0
     List<Employee> highSalaryEmployees = employeeList.stream()
@@ -80,7 +82,22 @@ public class DemoStream2 {
       .toList();
     System.out.println(highSalaryEmployees);
 
+    // Java 8
+    Stream<String> names = Stream.of("John", "Peter", "Leo");
+    long numberOfNamesLongerThanFourChar = names.filter(name -> name.length() > 4).count();
+    System.out.println(numberOfNamesLongerThanFourChar);
 
+    List<Integer> markSix = Stream.generate(() -> new Random().nextInt(49) + 1).distinct().limit(6).toList();
+    System.out.println(markSix);
+
+    // The relationship between the Intermediate and Terminal Operation
+    long testMap = employeeList.stream()
+      .map(employee -> {
+        System.out.println("Test Map!!!"); // map is not executed
+        return employee.getSalary(); // Java optimizes code by skipping useless operation
+      })
+      .count();
+    System.out.println(testMap);
 
 
 
