@@ -37,5 +37,5 @@ public interface AccountInterface {
 	/**
 	 * {@link Account#pin}.
 	 */
-	int getPin();
+	double getPin();
 }

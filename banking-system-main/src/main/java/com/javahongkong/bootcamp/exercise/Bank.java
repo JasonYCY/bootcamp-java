@@ -34,31 +34,21 @@ public class Bank implements BankInterface {
 
 	public boolean authenticateUser(Long accountNumber, int pin) {
 		// complete the function
-		Account lookupAccount = accounts.get(accountNumber);
-		if (lookupAccount == null) return false;
-		return lookupAccount.validatePin(pin);
+		return getAccount(accountNumber).validatePin(pin);
 	}
 
 	public double getBalance(Long accountNumber) {
 		// complete the function
-		return accounts.get(accountNumber).getBalance();
+		return getAccount(accountNumber).getBalance();
 	}
 
 	public void credit(Long accountNumber, double amount) {
 		// complete the function
-		Account lookupAccount = accounts.get(accountNumber);
-		if (lookupAccount == null) return;
-		lookupAccount.creditAccount(amount);
+		getAccount(accountNumber).creditAccount(amount);
 	}
 
 	public boolean debit(Long accountNumber, double amount) {
 		// complete the function
-		Account lookupAccount = accounts.get(accountNumber);
-		if (lookupAccount == null) return false;
-		return lookupAccount.debitAccount(amount);
-	}
-
-	public LinkedHashMap<Long, Account> getAccounts() {
-		return accounts;
+		return getAccount(accountNumber).debitAccount(amount);
 	}
 }

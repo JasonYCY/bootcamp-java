@@ -29,7 +29,7 @@ public abstract class Account implements AccountInterface {
 		return balance;
 	}
 
-	public int getPin() {
+	public double getPin() {
 		return pin;
 	}
 

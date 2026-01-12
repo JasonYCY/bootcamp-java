@@ -37,12 +37,4 @@ public class Transaction implements TransactionInterface {
 		// complete the function
 		return bank.debit(accountNumber, amount);
 	}
-
-	public Long getAccountNumber() {
-		return accountNumber;
-	}
-
-	public Bank getBank() {
-		return bank;
-	}
 }

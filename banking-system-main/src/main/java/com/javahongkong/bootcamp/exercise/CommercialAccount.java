@@ -36,8 +36,4 @@ public class CommercialAccount extends Account {
 		// complete the function
 		return authorizedUsers.contains(person);
 	}
-
-	public List<Person> getAuthorizedUsers() {
-		return authorizedUsers;
-	}
 }
